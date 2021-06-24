@@ -6,6 +6,7 @@ import os
 app = FastAPI()
 
 
+@app.get('/')
 @app.get('/test')
 async def test():
     chrome_options = webdriver.ChromeOptions()
@@ -22,4 +23,4 @@ async def test():
 
 
 if __name__ == '__main__':
-    uvicorn.run('app:app', port=8080, debug=True, host='0.0.0.0')
+    uvicorn.run('app:app', debug=True, host='0.0.0.0')
